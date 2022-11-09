@@ -19,4 +19,9 @@ As a user, I want a clean, easy to use user interface so that I can shop the onl
 
 [uml lab 36](./src/Lab36-UML.png)
 
+**Branch - combined-reducers**
+### Phase 2
+
+In phase 2, we will be adding the “Add to Cart” feature to our application, which will allow our users to not only browse items in the store, but also select them and have them persist in their “shopping cart” for later purchase.
+
 [Code sandbox Link](https://codesandbox.io/p/github/mariaka86/storefront/draft/tender-bohr?file=%2FREADME.md)

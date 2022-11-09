@@ -1,6 +1,8 @@
 import { connect } from 'react-redux'
+import Typography from '@mui/material/Typography';
 
-const Product = (props) => {
+
+const ProductList = (props) => {
   const { products } = props
 
   return (
@@ -9,17 +11,25 @@ const Product = (props) => {
       {
         products.map((product, index) =>
           <div key={`product- ${index}`}>
+            <Typography>
             {product.name}
+            {product.association}
+            {product.description}
+            {product.price}
+            {product.inventory}
+            </Typography>
           </div>
         )
     }
     </>
   );
 };
-const mapStateToProps = ({ products }) => {
+const mapStateToProps = ({ productReducer }) => {
   return {
-    products: products,
+    list: productReducer
   };
 };
+const mapDispatchToProps = {
 
-export default connect(mapStateToProps)(Product);
+}
+export default connect(mapStateToProps,mapDispatchToProps)(ProductList);

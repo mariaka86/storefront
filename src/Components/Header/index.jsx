@@ -3,11 +3,11 @@ import AppBar from '@mui/material/AppBar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
-// import { useSelector } from 'react-redux'
+import { useSelector } from 'react-redux'
 
 const Header =()=>{
 
-  // let productsInCart = useSelector(state => state.cart.productsInCart)
+  let productsInCart = useSelector(state => state.cart.productsInCart)
   
   return(
     <Box>
@@ -17,7 +17,7 @@ const Header =()=>{
       OUR STORE
     </Typography>
     <a href="value">Cart
-    {/* ({productsInCart.length}) */}
+    ({productsInCart.length})
     </a>
   </Toolbar>
 </AppBar>

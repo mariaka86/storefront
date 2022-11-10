@@ -1,4 +1,4 @@
-// import { connect } from 'react-redux'
+import { connect } from 'react-redux'
 import { Box, Button, ButtonGroup, Card, CardActions, CardMedia, Typography } from "@mui/material"
 
 

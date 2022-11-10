@@ -1,10 +1,8 @@
-s (28 sloc)  712 Bytes
-
 let initialState = {
   categories: [
-  { name: 'electronics', displayName: 'ELECTRONICS' },
-  { name: 'food', displayName: 'FOOD' },
-  { name: 'clothing', displayName: 'CLOTHING' },
+  { name: 'electronics', displayName: 'ELECTRONICS',description: 'enter description here' },
+  { name: 'food', displayName: 'FOOD',description: 'enter description here' },
+  { name: 'clothing', displayName: 'CLOTHING',description: 'enter description here' },
   ],
 };  
 
@@ -13,25 +11,15 @@ let initialState = {
   
     switch (type) {
   
-      case 'category':
+      case 'Select':
         return {
           ...state,
           activeCategory: payload,
         }
-      
-      case 'reset':
-        return initialState;
   
       default:
         return initialState;
         
-    }
-  }
-  
-  export const filterCategory = (activeCategory) => {
-    return {
-      type: 'category',
-      payload: activeCategory,
     }
   }
 

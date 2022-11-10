@@ -1,5 +1,6 @@
 const initialState = {
-  categories: [
+
+  products: [
     { name: 'IPod', category: 'Electronics',price:299, inventory:13},
     { name: 'Playstation 5', category:'Electronics' ,price:600, inventory:1 },
     { name: 'Sweater', category: 'Clothing', price:40.99, inventory:5 },
@@ -9,7 +10,7 @@ const initialState = {
     
 
   ],
-  activeCategory: ''
+  selectProducts:[]
 };
 
 
@@ -21,22 +22,14 @@ function productReducer (state = initialState, action){
     case 'SELECT_CATEGORY':
       return {
         ...state,
-        products: state.products.filter(product => product.category === payload),
+        selectProducts: [...state.products].filter(product => product.category === payload),
         activeCategory: payload
       }
-      case 'reset':
-        return initialState;
+      
     default:
-      return initialState;
+      return state;
   }
 }
 
-export const filterCategory =(activeCategory)=>{
-  return{
-    type:'category',
-    payload: activeCategory,
-
-  }
-}
 
 export default productReducer

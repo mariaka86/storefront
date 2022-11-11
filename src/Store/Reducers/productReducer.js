@@ -22,12 +22,12 @@ function productReducer (state = initialState, action){
     case 'SELECT_CATEGORY':
       return {
         ...state,
-        selectProducts: [...state.products].filter(product => product.category === payload),
+        selectProducts: [...initialState.products].filter(product => product.category === payload),
         activeCategory: payload
       }
       
     default:
-      return state;
+      return initialState;
   }
 }
 

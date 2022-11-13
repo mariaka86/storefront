@@ -1,5 +1,6 @@
 import { connect} from 'react-redux';
 import { filterCategory } from '../../Store/Reducers/actions';
+import { ButtonGroup, Button } from "@mui/material"
 
 
 
@@ -11,12 +12,12 @@ const Categories = (props) => {
     <h3>Categories</h3>
       <ul>
         {props.categories.map((category, index) => (
-          <li 
+          <Button 
             key={`category-${index}`}
             onClick={() => props.filterCategory(category.name)}
           >
             {category.name}
-          </li>
+          </Button>
         ))}
       </ul>
 

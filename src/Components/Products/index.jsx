@@ -1,17 +1,46 @@
-// import { connect } from 'react-redux'
+import { connect } from 'react-redux'
 import { Box, Button, ButtonGroup, Card, CardActions, CardMedia, Typography } from "@mui/material"
 
 
 
 const ProductList = (props) => {
-  const { products} = props;
+  const { items } = props
+  
 
   return (
-    <>
-    <Typography>
-      Products
-    </Typography>
-    </>
-  )
+    <> <h1> Products</h1>
+    {
+      items.map((product, index) =>
+        <Card key={`product- ${index}`}>
+          <Typography>
+          {product.category}
+          </Typography>
+          <Typography>
+          {product.name}
+          </Typography>
+          <Typography>
+          {product.description}
+          </Typography>
+          {product.price}
+          <Typography>
+          {product.inventory}
+          </Typography>
+        </Card>
+      )
+  }
+  </>
+);
+};
+ 
+
+const mapStateToProps = ({products}) => {
+  return {
+   items:products.products,
+  }
 }
-export default ProductList;
+
+const mapDispatchToProps = {
+  
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(ProductList);

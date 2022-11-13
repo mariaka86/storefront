@@ -1,4 +1,4 @@
-import {configureStore,combineReducers} from 'redux'// will need to add apply middleware
+import {createStore,combineReducers} from 'redux'// will need to add apply middleware
 import productReducer from './productReducer'
 import categoryReducer from './categoryReducer'
 import { composeWithDevTools } from 'redux-devtools-extension';
@@ -15,5 +15,5 @@ let reducers = combineReducers({
 
 export default function store(){
   // add applyMiddlware like composeWithDevTools(applyMiddleware(logger))
-  return configureStore(reducers, composeWithDevTools());
+  return createStore(reducers, composeWithDevTools());
 }

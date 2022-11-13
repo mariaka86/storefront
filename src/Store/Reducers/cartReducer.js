@@ -1,5 +1,6 @@
 let initialState ={
   productsInCart:[],
+  
 };
 
 function cartReducer(state=initialState,action){
